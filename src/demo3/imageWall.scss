@@ -1,0 +1,52 @@
+@use "sass:math";
+
+#imageWall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 330px;
+  margin: auto;
+  gap: 2px;
+  > div {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #aaa;
+    img {
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s;
+      opacity: 1;
+    }
+
+    &.loading {
+      img {
+        opacity: 0;
+      }
+      &::before {
+        $spinner-size: 20px;
+        position: absolute;
+        left: calc(50% - math.div($spinner-size, 2));
+        top: calc(50% - math.div($spinner-size, 2));
+        width: $spinner-size;
+        height: $spinner-size;
+        content: '';
+        border-radius: 100%;
+        border: 2px dotted gray;
+        animation: spin 3s linear;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
