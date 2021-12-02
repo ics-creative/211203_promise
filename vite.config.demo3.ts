@@ -1,11 +1,10 @@
 // vite.config.js
-import { resolve } from "path";
 import { defineConfig } from "vite";
 
 module.exports = defineConfig({
   base: "./",
-  root: "src",
+  root: "src/demo3",
   build: {
-    outDir: `${__dirname}/docs`,
+    outDir: `${__dirname}/docs/demo3`,
   },
 });

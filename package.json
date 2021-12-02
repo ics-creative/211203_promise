@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+    "build": "tsc && yarn build-top && yarn build-demo1 && yarn build-demo2 && yarn build-demo3",
+    "serve": "vite preview",
+    "build-top": "vite build",
+    "build-demo1": "vite build --config vite.config.demo1.ts",
+    "build-demo2": "vite build --config vite.config.demo2.ts",
+    "build-demo3": "vite build --config vite.config.demo3.ts"
   },
   "devDependencies": {
     "@types/node": "^16.11.11",
