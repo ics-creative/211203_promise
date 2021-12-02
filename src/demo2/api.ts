@@ -28,7 +28,7 @@ const loadWeatherData = () => {
   expired = now + CACHE_LIFETIME_SEC * 1000;
   // APIを呼び出して、Promiseをキャッシュとして保持する
   // awaitでPromiseを解決せず、そのまま返していることに注意
-  dataPromise = window.fetch(API_ENDPOINT).then((res) => res.json());
+  dataPromise = fetch(API_ENDPOINT).then((res) => res.json());
   return dataPromise;
 };
 
