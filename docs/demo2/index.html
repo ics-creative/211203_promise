@@ -7,22 +7,56 @@
     <style>
       body {
         font-family: sans-serif;
+        padding: 20px;
+        color: #444;
+      }
+      h1 {
+        color: rgb(90, 70, 120);
+      }
+      #api {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .component {
+        width: 28%;
+        min-width: 300px;
+        border: 1px solid #aaa;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 4px;
+      }
+      .component .title {
+        font-weight: bold;
+        border-bottom: 1px solid #aaa;
+      }
+      .component .value {
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .notice {
+        color: gray;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index.cdfd1a1c.js"></script>
+    <script type="module" crossorigin src="./assets/index.0fc9c653.js"></script>
   </head>
   <body>
     <div id="app">
-      <h2>demo2. PromiseでAPIキャッシュを制御</h2>
+      <h1>demo2. PromiseでAPIキャッシュを制御</h1>
       <p>
-        東京都の今日の天気・風・波の強さを表示します：
+        東京都の今日の天気・風・波の強さです
       </p>
       <div id="api">
-        <ul>
-          <li>天気：<span class="weather"></span></li>
-          <li>風：<span class="wind"></span></li>
-          <li>波：<span class="wave"></span></li>
-        </ul>
+        <div class="component weather"><div class="title">天気</div><div class="value"></div></div>
+        <div class="component wind"><div class="title">風</div><div class="value"></div></div>
+        <div class="component wave"><div class="title">波</div><div class="value"></div></div>
       </div>
       <div class="notice">
         データ出典：<a href="https://www.jma.go.jp/jma/kishou/info/coment.html">気象庁</a><br />

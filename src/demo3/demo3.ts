@@ -27,7 +27,7 @@ const loadImage = async (id: number) => {
 
   // ローディング表示を開始
   el.classList.add("loading");
-  await sleep(Math.random() * 1000); // デモ用にランダムな待ち時間を加える
+  await sleep(Math.random() * 500); // デモ用にランダムな待ち時間を加える
 
   // 読み込み完了・失敗時のイベントハンドラ
   const onload = () => {

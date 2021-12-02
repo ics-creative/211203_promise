@@ -13,21 +13,21 @@ import { getTokyoWave, getTokyoWeather, getTokyoWind } from "./api";
 */
 
 const showWeather = async () => {
-  const el = document.querySelector("#api .weather");
+  const el = document.querySelector(".weather .value");
   if (!el) return;
   el.textContent = "取得中...";
   el.textContent = (await getTokyoWeather()) ?? "取得失敗";
 };
 
 const showWind = async () => {
-  const el = document.querySelector("#api .wind");
+  const el = document.querySelector(".wind .value");
   if (!el) return;
   el.textContent = "取得中...";
   el.textContent = (await getTokyoWind()) ?? "取得失敗";
 };
 
 const showWave = async () => {
-  const el = document.querySelector("#api .wave");
+  const el = document.querySelector(".wave .value");
   if (!el) return;
   el.textContent = "取得中...";
   el.textContent = (await getTokyoWave()) ?? "取得失敗";
