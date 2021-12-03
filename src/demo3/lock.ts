@@ -13,7 +13,7 @@ const waitingList: Resolve[] = [];
  * ロックを取得します。他の処理でいっぱいの場合、空きが出るまで待ちます。
  * @return ロック開放関数。処理が終わったら必ず呼び出してください。
  */
-export const enter = async () => {
+export const enter = () => {
   const promise = new Promise<Releaser>((resolve) => {
     // Promiseのresolve関数を待ちリストに追加する
     waitingList.push(resolve);
